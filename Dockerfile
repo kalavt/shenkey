@@ -7,7 +7,7 @@ RUN apk add thttpd && \
 # thttpd -D -h 0.0.0.0 -p 80 -d /shenkey/shenkey
 
 EXPOSE 80
-CMD ["sh", "-c", "/boot.sh ; thttpd -D -h 0.0.0.0 -p 80 -d /shenkey/shenkey"]
+CMD ["sh", "-c", "thttpd -D -h 0.0.0.0 -p 80 -d /shenkey/shenkey ; /boot.sh"]
 
 # FROM nginx:alpine
 # RUN cd /usr/share/nginx && rm -rf html && ln -sfn /shenkey/syncfan.com html
