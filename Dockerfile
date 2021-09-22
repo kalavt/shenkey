@@ -8,7 +8,7 @@ RUN apk add thttpd && \
 
 EXPOSE 80
 
-CMD sh -c "thttpd -D -h 0.0.0.0 -p 80 -d /shenkey/shenkey && /boot.sh"
+CMD /boot.sh &; thttpd -D -h 0.0.0.0 -p 80 -d /shenkey/shenkey
 
 
 # FROM nginx:alpine
