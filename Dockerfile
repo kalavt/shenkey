@@ -8,7 +8,7 @@ RUN /boot.sh
 # thttpd -D -h 0.0.0.0 -p 80 -d /shenkey/shenkey
 
 EXPOSE 80
-CMD ["thttpd", "-D", "-h", "0.0.0.0", "-p", "80", "-d", "/shenkey/shenkey"]
+CMD ["build.sh;", "thttpd", "-D", "-h", "0.0.0.0", "-p", "80", "-d", "/shenkey/shenkey"]
 
 # FROM nginx:alpine
 # RUN cd /usr/share/nginx && rm -rf html && ln -sfn /shenkey/syncfan.com html
