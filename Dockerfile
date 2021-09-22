@@ -3,7 +3,6 @@ ENV RSLSYNC_SECRET=BCWHZRSLANR64CGPTXRE54ENNSIUE5SMO
 ENV RSLSYNC_PATH=/shenkey
 RUN apk add thttpd && \
     mkdir -p /shenkey/shenkey
-RUN /boot.sh
 
 # thttpd -D -h 0.0.0.0 -p 80 -d /shenkey/shenkey
 
