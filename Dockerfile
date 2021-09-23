@@ -7,9 +7,10 @@ RUN apk add thttpd && \
 # thttpd -D -h 0.0.0.0 -p 80 -d /shenkey/shenkey
 
 EXPOSE 80
-COPY . .
-RUN ["chmod", "+x", "start.sh"]
-ENTRYPOINT ["start.sh"]
+CMD nohup sh -c '/boot.sh && thttpd -D -h 0.0.0.0 -p 80 -d /shenkey/shenkey'
+# COPY . .
+# RUN ["chmod", "+x", "start.sh"]
+# ENTRYPOINT ["start.sh"]
 
 # CMD /boot.sh&; thttpd -D -h 0.0.0.0 -p 80 -d /shenkey/shenkey
 
