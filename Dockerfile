@@ -8,7 +8,8 @@ COPY . .
 RUN chmod +x start.sh
 
 EXPOSE 80
-CMD ["/start.sh"]
+ENTRYPOINT start.sh
+# CMD ["/start.sh"]
 # CMD nohup sh -c '/boot.sh && thttpd -D -h 0.0.0.0 -p 80 -d /shenkey/shenkey'
 
 
