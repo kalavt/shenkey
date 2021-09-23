@@ -4,15 +4,11 @@ ENV RSLSYNC_PATH=/shenkey
 RUN apk add thttpd && \
     mkdir -p /shenkey/shenkey
 
-# thttpd -D -h 0.0.0.0 -p 80 -d /shenkey/shenkey
+COPY . .
 
 EXPOSE 80
-CMD nohup sh -c '/boot.sh && thttpd -D -h 0.0.0.0 -p 80 -d /shenkey/shenkey'
-# COPY . .
-# RUN ["chmod", "+x", "start.sh"]
-# ENTRYPOINT ["start.sh"]
-
-# CMD /boot.sh&; thttpd -D -h 0.0.0.0 -p 80 -d /shenkey/shenkey
+ENTRYPOINT ["./entrypoint.sh"]
+# CMD nohup sh -c '/boot.sh && thttpd -D -h 0.0.0.0 -p 80 -d /shenkey/shenkey'
 
 
 # FROM nginx:alpine
