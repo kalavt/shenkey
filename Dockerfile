@@ -5,8 +5,10 @@ RUN apk add thttpd && \
     mkdir -p /shenkey/shenkey
 
 COPY . .
+RUN chmod +x start.sh
 
 EXPOSE 80
+CMD ["/start.sh"]
 # CMD nohup sh -c '/boot.sh && thttpd -D -h 0.0.0.0 -p 80 -d /shenkey/shenkey'
 
 
